@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Inventory : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private TextMeshProUGUI shroomText;
+
     void Start()
     {
-        
+        shroomText = GetComponent<TextMeshProUGUI>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateShroomText(PlayerInventory playerInventory)
     {
-        
+        shroomText.text = playerInventory.NumberOfShrooms.ToString();
+
     }
+
 }
